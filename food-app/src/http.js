@@ -9,7 +9,8 @@ export const searchRecipes = async (searchTerm) => {
       'x-api-key' :  process.env.REACT_APP_API_KEY
     }});
   if (!response.ok) {
-    throw new Error("Failed to fetch data");
+    console.error('Fetch error:', response.status, response.statusText);
+    throw new Error(`HTTP-status: ${response.status}: ${response.statusText}`);
   }
   const data = await response.json();
   console.log(data.results);
@@ -26,8 +27,8 @@ export const searchRecipeById = async (id) => {
       'x-api-key' :  process.env.REACT_APP_API_KEY
     }});
   if (!response.ok) {
-    console.log(response);
-    throw new Error("Failed to fetch data");
+    console.error('Fetch error:', response.status, response.statusText);
+    throw new Error(`HTTP-status: ${response.status}: ${response.statusText}`);
   }
   const data = await response.json();
   return data;

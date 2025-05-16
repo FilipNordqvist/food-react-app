@@ -4,6 +4,7 @@ import InputField from './components/InputField';
 import {searchRecipeById, searchRecipes} from "./http.js";
 import Button from './components/Button';
 import RecipeList from './components/RecipeList';
+import Checkbox from './components/Checkbox/index.js';
 
 function App() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -26,21 +27,34 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Recipe rescue</h1>
-      <hr className="d-flex m-5"></hr>
+      <h1 className="mt-5">Recipe rescue</h1>
+      <hr className="d-flex m-5" />
 
-      <InputField
-        id = "recipes"
-        placeholder = "Recipe name here..."
-        onChange = {(e) => setSearchTerm(e.target.value)}
-        value = {searchTerm}
-      />
-      <Button
-        text = "Search"
-        onClick = {() => handleRecipesSearch(searchTerm)}
-      />
+      <div className="d-flex align-items-center p-5">
+        <div className="flex-grow-1 me-3">
+          <InputField
+            id = "recipes"
+            placeholder = "Recipe name here..."
+            onChange = {(e) => setSearchTerm(e.target.value)}
+            value = {searchTerm}
+          />
+        </div>
 
-      <hr className="d-flex m-5"></hr>
+          <Button
+            text = "Search"
+            className={"me-0 align-self-center"}
+            onClick = {() => handleRecipesSearch(searchTerm)}
+          />       
+      </div>
+
+      <div>
+        <Checkbox 
+          value = ""
+        />
+
+      </div>
+
+      <hr className="d-flex m-5" />
       
       <RecipeList
         recipes={searchResult}
