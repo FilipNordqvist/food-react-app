@@ -12,7 +12,7 @@ const Recipe = ({recipe, searchRecipe, addFavorite}) => {
                     <button className="btn btn-primary" onClick={() => searchRecipe(recipe.id)}>
                     View recipe
                     </button>  
-                    <img src="/images/star.png" alt="Favorite recipe" className={styles.favorite} onClick={ () => addFavorite(recipe.title)}></img>
+                    <img src="/images/star.png" alt="Favorite recipe" className="float-end ms-1 cursor-pointer img-float" style={{ height: '25px' }} onClick={ () => addFavorite(recipe.title)}></img>
                 </div>
             </div>
         </div>
