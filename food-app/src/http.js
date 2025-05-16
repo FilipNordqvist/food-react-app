@@ -1,7 +1,7 @@
 
 
 export const searchRecipes = async (searchTerm) => {
-  const url = `https://api.spoonacular.com/recipes/complexSearch?&query=${searchTerm}`;
+  const url = `https://api.spoonacular.com/recipes/complexSearch?&query=${searchTerm}&includeIngredients`;
   const response = await fetch(url, {
     method: 'GET', 
     headers: {
@@ -23,9 +23,10 @@ export const searchRecipeById = async (id) => {
     method: 'GET', 
     headers: {
       'Content-Type': 'application/json',
-      'api-key' :  process.env.REACT_APP_API_KEY
+      'x-api-key' :  process.env.REACT_APP_API_KEY
     }});
   if (!response.ok) {
+    console.log(response);
     throw new Error("Failed to fetch data");
   }
   const data = await response.json();
