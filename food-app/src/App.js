@@ -12,6 +12,7 @@ function App() {
 
   const handleRecipesSearch = async (input) => {
     const result = await searchRecipes(input);
+    console.log(result);
     setSearchResult(result);
   };
 
