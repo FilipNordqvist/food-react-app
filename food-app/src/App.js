@@ -1,6 +1,6 @@
 import './App.css';
 import { useEffect, useState } from "react";
-import InputField from './Components/InputField';
+import InputField from './components/InputField';
 
 function App() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -21,3 +21,4 @@ function App() {
 }
 
 export default App;
+
