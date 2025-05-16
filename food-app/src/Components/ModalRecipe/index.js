@@ -1,6 +1,6 @@
 import React from "react";
 
-const Modal = ({ modal, ingredients, closeModal }) => {
+const Modal = ({ingredients, steps, closeModal }) => {
     return (
         <div className="modal show d-block">
             <div className="modal-dialog">
@@ -16,7 +16,8 @@ const Modal = ({ modal, ingredients, closeModal }) => {
                     </div>
                     <div className="modal-body">
                         {ingredients}
-                        
+                        { steps }
+
                     </div>
                 </div>
             </div>
