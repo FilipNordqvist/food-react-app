@@ -10,8 +10,7 @@ export default function CheckboxList ({ selected, onToggle }) {
 
       <div className="row gx-0 gy-0 mt-0"> 
       {diets.map((item, idx) => (    // idx är aktuellt elements position i map:en
-        <div key={item} className="col-6 col-sm-4 col-md-3 col-lg-2"
-        >
+        <div key={item} className="col-6 col-sm-4 col-md-3 col-lg-2">
           <Checkbox 
            value={item} 
             id={`diet-${idx}`} 

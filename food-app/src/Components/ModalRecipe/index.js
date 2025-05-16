@@ -1,4 +1,3 @@
-import React from "react";
 
 const Modal = ({ingredients, steps, closeModal, title}) => {
     return (

@@ -25,7 +25,7 @@ const Recipe = ({recipe, handleItem, image}) => {
             <div 
                 className="card shadow p-3 mb-5 bg-light rounded" 
                 onClick={openModal} 
-                data-grade={recipe.grade} 
+                
                 data-title={recipe.title}
                 style={{ cursor: 'pointer' }}
             >

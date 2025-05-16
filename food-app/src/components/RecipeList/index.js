@@ -1,4 +1,3 @@
-import React from 'react';
 import Recipe from '../Recipe';
 import styles from './recipelist.module.css';
 import { useEffect, useState } from "react";
