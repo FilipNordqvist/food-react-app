@@ -3,7 +3,7 @@ import React from "react";
 const Modal = ({ingredients, steps, closeModal, title}) => {
     return (
         <div className="modal show d-block">
-            <div className="modal-dialog">
+            <div className="modal-dialog modal-dialog-scrollable">
                 <div className="modal-content">
                     <div className="modal-header">
                         <h3 className="modal-title">{title}</h3>

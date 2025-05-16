@@ -11,8 +11,14 @@ const Recipe = ({recipe, searchRecipe, addFavorite}) => {
     const closeModal = () => setModal(false);
     
     const ingredients = [];
-    const steps = recipe.analyzedInstructions[0].steps[0].step;
- 
+    let instructions = [];
+
+
+    let steps = recipe.analyzedInstructions[0].steps;
+    
+    for(let i = 0; i < steps.length; i++){
+        instructions.push(<p key={i}>{steps[i].step}</p>)
+    }    
 
 
     for (let i = 0; i < recipe.extendedIngredients.length; i++) {
@@ -48,7 +54,7 @@ const Recipe = ({recipe, searchRecipe, addFavorite}) => {
 
             {modal && (
                 <ModalRecipe
-                    steps={steps}
+                    steps={instructions}
                     ingredients={ingredients}
                     closeModal={closeModal}
                     title={recipe.title}
