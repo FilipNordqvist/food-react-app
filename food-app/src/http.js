@@ -18,7 +18,7 @@ export const searchRecipes = async (searchTerm) => {
 
 
 export const searchRecipeById = async (id) => {
-  const url = `https://api.spoonacular.com/recipes/complexSearch?}&query=${id}`;    // GÖR OM! Hitta hur söka på id hos spoonacular
+  const url = `https://api.spoonacular.com/recipes/complexSearch?}&recipeBoxId=${id}`;    // Funkar?
   const response = await fetch(url, {
     method: 'GET', 
     headers: {
