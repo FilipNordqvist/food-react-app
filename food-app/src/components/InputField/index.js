@@ -3,8 +3,8 @@ import React from 'react';
 const InputField = ({ placeholder, id, onChange, value}) => {
     return (
         <div>
-            <div class="input-group mb-3">
-                <span class="input-group-text">Find recipe:</span>
+            <div className="input-group mb-3">
+                <span className="input-group-text">Find recipe:</span>
                 <input
                     id={id}
                     type="text"
