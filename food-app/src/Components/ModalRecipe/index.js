@@ -1,12 +1,12 @@
 import React from "react";
 
-const Modal = ({ingredients, steps, closeModal }) => {
+const Modal = ({ingredients, steps, closeModal, title}) => {
     return (
         <div className="modal show d-block">
             <div className="modal-dialog">
                 <div className="modal-content">
                     <div className="modal-header">
-                        <h5 className="modal-title">Ingredients</h5>
+                        <h3 className="modal-title">{title}</h3>
                         <button
                             type="button"
                             className="btn-close"
@@ -15,8 +15,15 @@ const Modal = ({ingredients, steps, closeModal }) => {
                         ></button>
                     </div>
                     <div className="modal-body">
-                        {ingredients}
-                        { steps }
+                        
+                        <div className="row">
+                            <div className="col-8 col-sm-6">
+                                <h5><strong>Ingredients</strong></h5>{ingredients}</div>
+                             <div className="col-8 col-sm-6"><h5><strong>Instructions</strong></h5>{ steps }</div>
+                            
+                            
+                            </div>
+                     
 
                     </div>
                 </div>

@@ -30,7 +30,7 @@ const Recipe = ({recipe, searchRecipe, addFavorite}) => {
             >
                 <img src={recipe.image} className="card-img-top" alt={recipe.title} />
                 <div className="card-body">
-                    <h5 className="card-title">{recipe.title}</h5>
+                    <h4 className="card-title">{recipe.title}</h4>
                     <div className="d-flex justify-content-center">
                         <img 
                             src="/images/star.png" 
@@ -50,6 +50,7 @@ const Recipe = ({recipe, searchRecipe, addFavorite}) => {
                     steps={steps}
                     ingredients={ingredients}
                     closeModal={closeModal}
+                    title={recipe.title}
                 />
             )}
         </>
