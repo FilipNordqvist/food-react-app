@@ -41,7 +41,7 @@ function App() {
       />
 
       <hr className="d-flex m-5"></hr>
-
+      
       <RecipeList
         recipes={searchResult}
         searchRecipe={handleIdRecipeSearch}
