@@ -1,6 +1,6 @@
 import './App.css';
 import { useEffect, useState } from "react";
-import InputField from './components/InputField';
+import InputField from './Components/InputField';
 import {searchRecipeById, searchRecipes} from "./http.js";
 import Button from './components/Button';
 import RecipeList from './components/RecipeList';
