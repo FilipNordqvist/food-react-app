@@ -1,17 +1,21 @@
 import './App.css';
+import { useEffect, useState } from "react";
+import InputField from './Components/InputField';
 
 function App() {
-  console.log(process.env.REACT_APP_WEATHER_API_KEY);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [recipes, setRecipes] = useState([]);
+
+
   return (
-
-    
     <div className="App">
-      <header className="App-header">
-
-      
-
-
-      </header>
+      <InputField
+        id = "recipes"
+        labelTitle = "Sök recept:"
+        placeholder = "Receptnamn här..."
+        onChange={(e) => setSearchTerm(e.target.value)}
+        value={searchTerm}
+      />
     </div>
   );
 }
