@@ -1,4 +1,5 @@
 import React from "react";
+import './modal.module.css';
 
 const Modal = ({ingredients, steps, closeModal, title}) => {
     return (
