@@ -1,21 +1,21 @@
 import './App.css';
+import { useEffect, useState } from "react";
+import InputField from './Components/InputField';
 
 function App() {
+  const [searchTerm, setSearchTerm] = useState("");
+  const [recipes, setRecipes] = useState([]);
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <InputField
+        id = "recipes"
+        labelTitle = "Sök recept:"
+        placeholder = "Receptnamn här..."
+        onChange={(e) => setSearchTerm(e.target.value)}
+        value={searchTerm}
+      />
     </div>
   );
 }
