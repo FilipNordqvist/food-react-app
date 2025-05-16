@@ -12,7 +12,8 @@ export const searchRecipes = async (searchTerm) => {
     throw new Error("Failed to fetch data");
   }
   const data = await response.json();
-  return data;
+  console.log(data.results);
+  return data.results;
 };
 
 
