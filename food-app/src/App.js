@@ -16,8 +16,9 @@ function App() {
   };
 
   const handleIdRecipeSearch = async (id) => {
-    const result = await searchRecipeById(id);
-    console.log(result);
+    console.log(id);
+    //const result = await searchRecipeById(id);
+    //console.log(result);
   }
 
   
@@ -26,18 +27,18 @@ function App() {
     <div className="App">
       <InputField
         id = "recipes"
-        labelTitle = "Sök recept:"
-        placeholder = "Receptnamn här..."
+        labelTitle = "Find recipes:"
+        placeholder = "Recipe name here..."
         onChange = {(e) => setSearchTerm(e.target.value)}
         value = {searchTerm}
       />
       <Button
-        text = "Sök"
+        text = "Search"
         onClick = {() => handleRecipesSearch(searchTerm)}
       />
       <RecipeList
         recipes={searchResult}
-
+        searchRecipe={handleIdRecipeSearch}
       />
     </div>
   );
