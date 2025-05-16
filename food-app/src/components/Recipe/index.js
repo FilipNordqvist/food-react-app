@@ -4,7 +4,7 @@ import ModalRecipe from '../ModalRecipe';
 
 
 
-const Recipe = ({recipe, searchRecipe, addFavorite}) => {
+const Recipe = ({recipe, handleItem, image}) => {
     const [modal, setModal] = useState(false);
     
     const openModal = () => setModal(true);
@@ -30,16 +30,16 @@ const Recipe = ({recipe, searchRecipe, addFavorite}) => {
                 style={{ cursor: 'pointer' }}
             >
                 <img src={recipe.image} className="card-img-top" alt={recipe.title} />
-                <div className="card-body w-100 h-100">
+                <div className="card-body d-flex flex-column flex-grow-1 w-100 h-100">
                     <h4 className="card-title">{recipe.title}</h4>
-                    <div className="d-flex justify-content-center">
+                    <div className="mt-auto d-flex justify-content-center">
                         <img 
-                            src="/images/star.png" 
+                            src={image} 
                             alt="Favorite recipe" 
                             className={styles.favorite} 
                             onClick={(e) => {
                                 e.stopPropagation(); // Hindra modalen från att öppnas vid klick
-                                addFavorite(recipe.title);
+                                handleItem(recipe);
                             }}
                         />
                     </div>
