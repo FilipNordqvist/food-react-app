@@ -24,7 +24,7 @@ export const searchRecipeById = async (id) => {
     method: 'GET', 
     headers: {
       'Content-Type': 'application/json',
-      'api-key' :  process.env.REACT_APP_API_KEY
+      'x-api-key' :  process.env.REACT_APP_API_KEY
     }});
   if (!response.ok) {
     console.error("HTTP status", response.status, response.statusText);
