@@ -1,0 +1,183 @@
+body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;    
+}
+
+
+/* Er CSS-kod nedan */
+
+
+/* Allt gemensamt, med desktop-skärm större än 1300 som utgångspunkt */
+#container {
+    display: grid;
+    width: 75%;
+    justify-self: center;
+    grid-template-areas: 
+      "header"
+      "nav"
+      "content"
+      "footer";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto;    
+
+    border-style: groove;
+    box-shadow: 2px;
+    border-radius: 4px;
+    padding: 2px;
+  }      
+      
+header{
+    display: flex;
+    justify-content: center;
+    grid-area: header;  
+    background-color: black;
+    color: white;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;    
+    flex-wrap: wrap;
+    justify-content: space-around;
+    grid-area: nav;  
+    background-color: rgb(31, 30, 30);
+    padding: 10px;
+}
+
+/* Texten i navbaren */
+nav a {
+    text-decoration: none;     
+    color: white;
+    font-weight: bold;
+}   
+
+main {
+    grid-area: content;
+}
+
+h2 {
+    text-align: center;
+}
+
+
+#movie-figures {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-around;    
+}
+
+figure {    
+    border-radius: 4px;
+    padding: 8px;
+    border-style: groove;
+    text-align: center;
+
+    margin: 10px;
+}
+
+figcaption {
+    padding: 10px;
+}
+
+img {
+    max-width: 100%;
+}
+        
+footer {
+    grid-area: footer;
+    display: flex;
+    justify-content: center;      
+    background-color: black;
+    color: white;
+    padding: 20px;
+}
+
+
+
+
+/* Desktop */
+@media screen and (max-width: 1300px) {
+    #container {
+       display: grid;
+       grid-template-areas: 
+       "header"
+       "nav"
+       "content"
+       "footer";
+       grid-template-columns: 100%;
+       grid-template-rows: auto auto auto auto;
+
+       border-style: groove;
+       border-radius: 4px;
+       padding: 2px;
+  }   
+
+}
+
+/* Tablet */
+@media screen and (max-width: 926px) {
+    #container {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 30% 70%;
+        grid-template-rows: 10% auto auto 10%;        
+    
+        grid-template-areas: 
+        "header content"
+        "nav content"
+        "nav content"    
+        "footer content";  
+    }
+    
+    nav {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        height: auto; 
+      }
+
+      #movie-figures {
+        grid-area: content;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      figure {
+        flex: 0 0 41%; /* flex-grow, flex-shrink, flex-basis - gör så bilderna fortsätter ligga två och två*/
+        padding: 2px;
+    }
+
+}
+
+
+/* Mobile */
+@media screen and (max-width: 500px) {
+    #container {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto;
+    
+        grid-template-areas: 
+        "header"
+        "nav"
+        "content"
+        "footer";        
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }  
+
+    #movie-figures {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    figure {
+        padding: 2px;
+    }
+}
+
