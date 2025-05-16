@@ -1,10 +1,10 @@
 import './App.css';
 import { useEffect, useState } from "react";
-import InputField from './Components/InputField';
+import InputField from './components/InputField';
 import {searchRecipeById, searchRecipes} from "./http.js";
-import Button from './Components/Button';
-import RecipeList from './Components/RecipeList';
-import Checkbox from './Components/Checkbox/index.js';
+import Button from './components/Button';
+import RecipeList from './components/RecipeList';
+import CheckboxList from './components/CheckboxList/index.js';
 
 function App() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -58,7 +58,7 @@ function App() {
       <h1 className="mt-5">Recipe rescue</h1>
       <hr className="d-flex m-5" />
 
-      <div className="d-flex align-items-center p-5">
+      <div className="d-flex align-items-center p-3">
         <div className="flex-grow-1 me-3">
           <InputField
             id = "recipes"
@@ -96,7 +96,7 @@ function App() {
         titleOfList = "Favorites"
         recipes={recipes}
         handleItem={removeFavoriteRecipe}
-        show={false}
+        show={true}
         image="/images/delete.png"
       />
     </div>
