@@ -13,7 +13,8 @@ export const searchRecipes = async (searchTerm) => {
     throw new Error(`Failed to fetch data: ${response.status} ${response.statusText}`);
   }
   const data = await response.json();
-  return data;
+  console.log(data.results);
+  return data.results;
 };
 
 

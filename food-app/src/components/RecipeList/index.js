@@ -1,16 +1,13 @@
 import React from 'react';
 import Recipe from '../Recipe';
-import styles from './movielist.module.css';
+import styles from './recipelist.module.css';
 
-const RecipeList = ({movies, onDelete}) => {
+const RecipeList = ({recipes, searchRecipe}) => {
     return(
         <div className="mt-3">
-        <h2>Filmer</h2>
-        <ul className={styles.movies}>
-            {movies.map((movie) => (
-                <Recipe key={movie.title} movie={movie} onDelete={onDelete} />
+            {recipes.map((recipe) => (
+                <Recipe key={recipe.id} recipe={recipe} searchRecipe={searchRecipe} />
             ))}
-        </ul>
         </div>
     );
 };
