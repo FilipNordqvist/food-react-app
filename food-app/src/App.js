@@ -2,27 +2,41 @@ import './App.css';
 import { useEffect, useState } from "react";
 import InputField from './Components/InputField';
 import {searchRecipeById, searchRecipes} from "./http.js";
-import Button from './components/Button';
-import RecipeList from './components/RecipeList';
-import Checkbox from './components/Checkbox/index.js';
+import Button from './Components/Button';
+import RecipeList from './Components/RecipeList';
+import Checkbox from './Components/Checkbox/index.js';
 
 function App() {
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResult, setSearchResult] = useState([]);
-  const [recipes, setRecipes] = useState([]);
+  const [recipes, setRecipes] = useState(() => {
+    const stored = localStorage.getItem("recipes");
+    if(stored){
+      return JSON.parse(stored);
+    } else {
+      return [];
+    }
+  });
 
   const handleRecipesSearch = async (input) => {
     const result = await searchRecipes(input);
-    console.log(result);
     setSearchResult(result);
   };
 
-  const handleIdRecipeSearch = async (id) => {
-    console.log(id);
-    //const result = await searchRecipeById(id);
-    //console.log(result);
-  }
+  const addFavoriteRecipe = (recipe) => {
+    setRecipes((prevRecipes) => [...prevRecipes, recipe]);
+  };
 
+  const removeFavoriteRecipe = (recipeToRemove) => {
+    setRecipes((prevRecipes) =>
+      prevRecipes.filter((recipe) => recipe.id !== recipeToRemove.id)
+    );
+  };
+
+  useEffect(() => {
+    localStorage.setItem("recipes", JSON.stringify(recipes));
+  }, [recipes]);
+  
   
 
   return (
@@ -57,8 +71,19 @@ function App() {
       <hr className="d-flex m-5" />
       
       <RecipeList
+        titleOfList = "Search Results"
         recipes={searchResult}
-        searchRecipe={handleIdRecipeSearch}
+        handleItem={addFavoriteRecipe}
+        show={true}
+        image="/images/star.png"
+      />
+      <hr className="d-flex m-5" />
+      <RecipeList
+        titleOfList = "Favorites"
+        recipes={recipes}
+        handleItem={removeFavoriteRecipe}
+        show={false}
+        image="/images/delete.png"
       />
     </div>
   );
