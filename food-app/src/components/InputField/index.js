@@ -1,17 +1,19 @@
 import React from 'react';
 
-const InputField = ({ placeholder, id, labelTitle, onChange, value}) => {
+const InputField = ({ placeholder, id, onChange, value}) => {
     return (
         <div>
-            <label htmlFor={id} className="fw-bold">{labelTitle}</label>
-            <input
-                id={id}
-                type="text"
-                onChange = {onChange}
-                placeholder = {placeholder}
-                value = {value}
-                className = {'form-control'}
-            />
+            <div class="input-group mb-3">
+                <span class="input-group-text">Find recipe:</span>
+                <input
+                    id={id}
+                    type="text"
+                    onChange = {onChange}
+                    placeholder = {placeholder}
+                    value = {value}
+                    className = {'form-control'}
+                />
+            </div>
         </div>
     );
 };

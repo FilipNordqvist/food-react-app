@@ -1,9 +1,9 @@
 import './App.css';
 import { useEffect, useState } from "react";
-import InputField from './Components/InputField';
+import InputField from './components/InputField';
 import {searchRecipeById, searchRecipes} from "./http.js";
-import Button from './Components/Button';
-import RecipeList from './Components/RecipeList';
+import Button from './components/Button';
+import RecipeList from './components/RecipeList';
 
 function App() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -25,9 +25,11 @@ function App() {
 
   return (
     <div className="App">
+      <h1>Recipe rescue</h1>
+      <hr className="d-flex m-5"></hr>
+
       <InputField
         id = "recipes"
-        labelTitle = "Find recipes:"
         placeholder = "Recipe name here..."
         onChange = {(e) => setSearchTerm(e.target.value)}
         value = {searchTerm}
@@ -36,6 +38,9 @@ function App() {
         text = "Search"
         onClick = {() => handleRecipesSearch(searchTerm)}
       />
+
+      <hr className="d-flex m-5"></hr>
+
       <RecipeList
         recipes={searchResult}
         searchRecipe={handleIdRecipeSearch}
