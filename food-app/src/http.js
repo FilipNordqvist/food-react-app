@@ -1,7 +1,7 @@
 
 
-export const searchRecipes = async (searchTerm) => {
-  const url = `https://api.spoonacular.com/recipes/complexSearch?&query=${searchTerm}&instructionsRequired=true&addRecipeInformation=true&addRecipeInstructions=true&fillIngredients=true`;
+export const searchRecipes = async (searchTerm, selectedDiets) => {
+  const url = `https://api.spoonacular.com/recipes/complexSearch?&query=${searchTerm}&instructionsRequired=true&addRecipeInformation=true&addRecipeInstructions=true&fillIngredients=true${selectedDiets}`;
   const response = await fetch(url, {
     method: 'GET', 
     headers: {

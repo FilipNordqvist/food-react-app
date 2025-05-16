@@ -10,9 +10,22 @@ function App() {
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResult, setSearchResult] = useState([]);
   const [recipes, setRecipes] = useState([]);
+   const [selectedDiets, setSelectedDiets] = useState([]);
+
+
+   const toggleDiets = (diet) => {  // Tar in en matpreferens    
+    setSelectedDiets(prev =>        // Kopia av den gamla arrayen selectedDiets
+      prev.includes(diet)           // Om arrayen redan innehåller preferensen..
+        ? prev.filter(i => i !== diet) // ..ta bort..
+        : [...prev, diet]               // ..annars skapa en ny array och lägg till.
+    );
+  };
 
   const handleRecipesSearch = async (input) => {
-    const result = await searchRecipes(input);
+    const dietParam = `&diet=${selectedDiets.join(',')}`;
+    console.log(dietParam)
+
+    const result = await searchRecipes(input, dietParam);
     console.log(result);
     setSearchResult(result);
   };
@@ -49,8 +62,9 @@ function App() {
 
       <div>
         <CheckboxList
+        selected={selectedDiets}
+        onToggle={toggleDiets}
         />
-
       </div>
 
       <hr className="d-flex m-5" />

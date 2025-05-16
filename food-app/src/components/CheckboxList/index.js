@@ -1,17 +1,22 @@
 import Checkbox from "../Checkbox";
 
 
-export default function CheckboxList () {
+export default function CheckboxList ({ selected, onToggle }) {
 
-    let intolerances = ["Dairy", "Egg", "Gluten", "Peanut", "Seafood", "Shellfish"];    
+    let diets = ["Gluten-free", "Pescetarian", "Vegetarian", "Vegan", "Paleo", "Ketogenic"];    
 
   return (
     <div className="mb-3">
-        <label className="fw-bold">Exclude:</label>
-      {intolerances.map((item, idx) => (    // idx är aktuellt elements position i map:en
+        <label className="fw-bold">Preferences:</label>
+      {diets.map((item, idx) => (    // idx är aktuellt elements position i map:en
         <div key={item} className="form-check form-check-inline"
         >
-          <Checkbox id={`intol-${idx}`} value={item} />
+          <Checkbox 
+           value={item} 
+            id={`diet-${idx}`} 
+             checked={selected.includes(item)}
+              onChange={() => onToggle(item)}
+            />
         </div>
       ))}
     </div>
