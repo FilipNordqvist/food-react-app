@@ -1,0 +1,20 @@
+.img {
+    float: right;
+    height: 25px;
+    margin-left: 5px;
+}
+
+.li{
+    list-style: none;
+    background-color: #eee;
+    margin: 5px;
+    padding: 10px;
+    box-shadow: 0 0 5px #999;
+}
+
+.delete{
+    float: right;
+    height: 25px;
+    margin-left: 5px;
+    cursor: pointer;
+}
