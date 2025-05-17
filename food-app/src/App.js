@@ -55,8 +55,8 @@ function App() {
 
   return (
     <div className="App">
-      <h1 className="display-3 mt-5">Recipe rescue</h1>
-      <hr className="d-flex m-5" />
+      <h1 className="display-3 mt-5 m-5">Recipe rescue</h1>
+      
 
       <div className="d-flex align-items-center p-3">
         <div className="flex-grow-1 me-3">
