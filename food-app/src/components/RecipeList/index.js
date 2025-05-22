@@ -2,7 +2,7 @@ import Recipe from '../Recipe';
 import styles from './recipelist.module.css';
 import { useEffect, useState } from "react";
 
-const RecipeList = ({titleOfList, recipes, handleItem, show, image, showRating}) => {
+const RecipeList = ({titleOfList, recipes, handleItem, show, image, showRating = false}) => {
 
     const [showRecipes, setShowRecipes] = useState(show);
 

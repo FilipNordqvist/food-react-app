@@ -5,10 +5,9 @@ import {searchRecipeById, searchRecipes} from "./http.js";
 import Button from './Components/Button';
 import RecipeList from './Components/RecipeList';
 import CheckboxList from './Components/CheckboxList/index.js';
-import Rating from './Components/Rating/index.js';
+
 
 function App() {
-  const [rating, setRating] = useState(0)
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResult, setSearchResult] = useState([]);
   const [recipes, setRecipes] = useState(() => {
@@ -101,11 +100,6 @@ function App() {
         show={true}
         image="/images/delete.png"
         showRating ={true}
-      />
-      <Rating
-      id="rating-field"
-      value={rating}
-      onChange={(val) => setRating(val)}
       />
     </div>
   );
