@@ -91,6 +91,7 @@ function App() {
         handleItem={addFavoriteRecipe}
         show={true}
         image="/images/star.png"
+         showRating ={true}
       />
       <hr className="d-flex m-5" />
       <RecipeList
@@ -99,7 +100,7 @@ function App() {
         handleItem={removeFavoriteRecipe}
         show={true}
         image="/images/delete.png"
-        showRating ={true}
+        showRating ={false}
       />
     </div>
   );
