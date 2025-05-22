@@ -2,7 +2,7 @@ import Recipe from '../Recipe';
 import styles from './recipelist.module.css';
 import { useEffect, useState } from "react";
 
-const RecipeList = ({titleOfList, recipes, handleItem, show, image}) => {
+const RecipeList = ({titleOfList, recipes, handleItem, show, image, showRating}) => {
 
     const [showRecipes, setShowRecipes] = useState(show);
 
@@ -21,7 +21,7 @@ const RecipeList = ({titleOfList, recipes, handleItem, show, image}) => {
             <div className="row g-4 align-items-stretch">
             {recipes.map((recipe) => (
                 <div key={recipe.id} className="col-12 col-sm-6 col-md-4 col-lg-3 mb-4 d-flex">                    
-                <Recipe key={recipe.id} recipe={recipe} handleItem={handleItem} image={image}/>                    
+                <Recipe key={recipe.id} recipe={recipe} handleItem={handleItem} image={image} showRating={showRating}/>                    
                 </div>
             ))}
             </div>

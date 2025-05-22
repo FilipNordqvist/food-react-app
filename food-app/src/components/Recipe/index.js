@@ -1,11 +1,13 @@
 import React, {useState} from 'react';
 import styles from './recipe.module.css';
 import ModalRecipe from '../ModalRecipe';
+import Rating from '../Rating';
 
 
 
 const Recipe = ({recipe, handleItem, image}) => {
     const [modal, setModal] = useState(false);
+    const [rating, setRating] = useState(0);
     
     const openModal = () => setModal(true);
     const closeModal = () => setModal(false);
@@ -42,6 +44,14 @@ const Recipe = ({recipe, handleItem, image}) => {
                                 handleItem(recipe);
                             }}
                         />
+                    </div>
+                    <div onClick={(e) => e.stopPropagation()} className='mt-3'>
+                        <Rating
+                        id={`rating-${recipe.id}`}
+                        value={rating}
+                        onChange={setRating}
+                        />
+
                     </div>
                 </div>
             </div>

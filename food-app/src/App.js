@@ -100,6 +100,7 @@ function App() {
         handleItem={removeFavoriteRecipe}
         show={true}
         image="/images/delete.png"
+        showRating ={true}
       />
       <Rating
       id="rating-field"
