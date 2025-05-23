@@ -5,7 +5,7 @@ import Rating from '../Rating';
 
 
 
-const Recipe = ({recipe, handleItem, image, showRating= false}) => {
+const Recipe = ({recipe, handleItem, image, showRating= true}) => {
     const [modal, setModal] = useState(false);
     const [rating, setRating] = useState(0);
     
