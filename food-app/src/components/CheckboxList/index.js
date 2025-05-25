@@ -3,7 +3,7 @@ import Checkbox from "../Checkbox";
 
 export default function CheckboxList ({ selected, onToggle }) {
 
-    let diets = ["Gluten-free", "Pescetarian", "Ketogenic", "Vegetarian", "Vegan  ", "Paleo  "];    
+    let diets = ["Gluten-free", "Pescetarian", "Vegetarian", "Vegan", "Paleo", "Ketogenic"];    
 
   return (
     <div className="container mt-3 text-start">
