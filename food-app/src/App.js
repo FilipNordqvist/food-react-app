@@ -1,10 +1,10 @@
 import './App.css';
 import { useEffect, useState } from "react";
-import InputField from './Components/InputField';
+import InputField from './components/InputField';
 import {searchRecipeById, searchRecipes} from "./http.js";
-import Button from './Components/Button';
-import RecipeList from './Components/RecipeList';
-import CheckboxList from './Components/CheckboxList/index.js';
+import Button from './components/Button';
+import RecipeList from './components/RecipeList';
+import CheckboxList from './components/CheckboxList/index.js';
 
 
 function App() {
@@ -55,11 +55,11 @@ function App() {
   
 
   return (
-    <div className="App">
+    <div className="App mt-4">
       <h1 className="display-3 mt-5 m-5">Recipe rescue</h1>
       
 
-      <div className="d-flex align-items-center p-3">
+      <div className="d-flex flex-column flex-sm-row align-items-stretch gap-2 p-3">  
         <div className="flex-grow-1 me-3">
           <InputField
             id = "recipes"

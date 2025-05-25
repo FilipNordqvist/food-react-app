@@ -25,6 +25,9 @@ Search for recipes, rate them and save favorites.
 * [NPM] - Package Manager
 * [Axios] - Used to make API-calls
 
+We chose React 
+
+
 
 ## Versioning
 

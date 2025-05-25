@@ -3,14 +3,15 @@ import Checkbox from "../Checkbox";
 
 export default function CheckboxList ({ selected, onToggle }) {
 
-    let diets = ["Gluten-free", "Pescetarian", "Vegetarian", "Vegan", "Paleo", "Ketogenic"];    
+    let diets = ["Gluten-free", "Pescetarian", "Ketogenic", "Vegetarian", "Vegan  ", "Paleo  "];    
 
   return (
-    <div className="mb-2">
+    <div className="container mt-3 text-start">
 
-      <div className="row gx-0 gy-0 mt-0"> 
+  
+      <div className="row  g-2">   
       {diets.map((item, idx) => (    // idx är aktuellt elements position i map:en
-        <div key={item} className="col-6 col-sm-4 col-md-3 col-lg-2">
+        <div key={item} className="col-6 col-md-4 col-lg-2">
           <Checkbox 
            value={item} 
             id={`diet-${idx}`} 
