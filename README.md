@@ -25,7 +25,11 @@ Search for recipes, rate them and save favorites.
 * [NPM] - Package Manager
 * [Axios] - Used to make API-calls
 
-We chose React 
+We chose React beacuse it is the most popular framework.
+https://gist.github.com/tkrotoff/b1caa4c3a185629299ec234d2314e190
+
+When comparing the diffrenses between the framworks
+https://www.browserstack.com/guide/angular-vs-react-vs-vue
 
 
 
