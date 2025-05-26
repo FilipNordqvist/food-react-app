@@ -1,7 +1,5 @@
 import React from "react";
 
-const icon = "💚";
-
 const Rating = ({ id, value, onChange }) => {
   return (
     <>
@@ -19,14 +17,6 @@ const Rating = ({ id, value, onChange }) => {
         <option value="4">4</option>
         <option value="5">5</option>
       </select>
-
-      <div>
-        {Array(value)
-          .fill(icon)
-          .map((item, index) => (
-            <span key={index}>{item}</span>
-          ))}
-      </div>
     </>
   );
 };
