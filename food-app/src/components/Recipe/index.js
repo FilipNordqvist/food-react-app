@@ -48,14 +48,14 @@ const Recipe = ({recipe, handleItem, image, showRating= false}) => {
         
         <>
             <div 
-                className="card shadow p-3 mb-5 bg-light rounded" 
+                className="card shadow bg-light rounded d-flex flex-column h-100 w-100"
                 onClick={openModal} 
                 
                 data-title={recipe.title}
                 style={{ cursor: 'pointer' }}
             >
                 <img src={recipe.image} className="card-img-top" alt={recipe.title} />
-                <div className="card-body d-flex flex-column flex-grow-1 w-100 h-100">
+                <div className="card-body d-flex flex-column flex-grow-1">
                     <h4 className="card-title">{recipe.title}</h4>
                     
                     {showRating && (
