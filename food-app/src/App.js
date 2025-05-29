@@ -1,9 +1,9 @@
 import './App.css';
 import { useEffect, useState } from "react";
-import InputField from './components/InputField';
+import InputField from './components/InputField/index.js';
 import {searchRecipeById, searchRecipes} from "./http.js";
-import Button from './components/Button';
-import RecipeList from './components/RecipeList';
+import Button from './components/Button/index.js';
+import RecipeList from './components/RecipeList/index.js';
 import CheckboxList from './components/CheckboxList/index.js';
 
 
@@ -99,7 +99,7 @@ function App() {
       />
       <hr className="d-flex m-5" />
       <RecipeList
-        titleOfList = "Favorites"
+        titleOfList = "Saved Recipes"
         recipes={recipes}
         handleItem={removeFavoriteRecipe}
         show={true}
