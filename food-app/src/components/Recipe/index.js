@@ -33,7 +33,7 @@ const Recipe = ({recipe, handleItem, image, showRating= false}) => {
 
     const handleRating = (value) => {
         setRating(value);
-
+        recipe.rating = value;
         const storedRating = localStorage.getItem("recipeRatings");
         let ratings = {};
         if (storedRating) {

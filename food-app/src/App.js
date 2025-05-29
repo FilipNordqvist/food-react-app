@@ -48,6 +48,19 @@ function App() {
     );
   };
 
+  function sortByTime() {
+    setRecipes([...recipes].sort((a, b) => a.readyInMinutes - b.readyInMinutes
+    ));
+    setSearchResult([...searchResult].sort((a, b) => a.readyInMinutes - b.readyInMinutes   //Stigande
+    ));
+  }
+
+  function sortByGrade() {
+    setRecipes([...recipes].sort((a, b) => b.rating - a.rating  //Fallande
+    ));
+  }
+
+
   useEffect(() => {
     localStorage.setItem("recipes", JSON.stringify(recipes));
   }, [recipes]);
