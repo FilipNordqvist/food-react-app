@@ -7,6 +7,8 @@ You can filter on dietery preferences, rate the recipes and save your favorites.
 
 Clone the repository.
 
+Navigate (cd) into ./food-react-app/food-app
+
 To install dependencies, run:
 npm install
 
