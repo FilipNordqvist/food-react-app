@@ -55,7 +55,7 @@ function App() {
     ));
   }
 
-  function sortByGrade() {
+  function sortByRating() {
     setRecipes([...recipes].sort((a, b) => b.rating - a.rating  //Fallande
     ));
   }
@@ -99,6 +99,23 @@ function App() {
         selected={selectedDiets}
         onToggle={toggleDiets}
         />
+      </div>
+
+      <div className="container mt-3">
+        <div className="row justify-content-center g-2">
+          <div className="col-auto">
+            <Button
+              text="Sort by time"
+              onClick={() => sortByTime()}
+            />
+          </div>
+          <div className="col-auto">
+            <Button
+              text="Sort by rating"
+              onClick={() => sortByRating()}
+            />
+          </div>
+        </div>
       </div>
 
       <hr className="d-flex m-5" />
