@@ -57,7 +57,7 @@ const Recipe = ({recipe, handleItem, image, showRating= false}) => {
                 <img src={recipe.image} className="card-img-top" alt={recipe.title} />
                 <div className="card-body d-flex flex-column flex-grow-1">
                     <h4 className="card-title">{recipe.title}</h4>
-                    
+                    <div className="flex-grow-1"></div>
                     {showRating && (
                     <div onClick={(e) => e.stopPropagation()} className='mt-3'>
                         <Rating
