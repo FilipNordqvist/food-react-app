@@ -63,9 +63,14 @@ function App() {
         <div className="flex-grow-1 me-3">
           <InputField
             id = "recipes"
-            placeholder = "Recipe name here..."
+            placeholder = "Recipe name here..."            
             onChange = {(e) => setSearchTerm(e.target.value)}
             value = {searchTerm}
+            onKeyUp={e => {
+              if (e.key === 'Enter') {
+                handleRecipesSearch(searchTerm);
+              }
+            }}
           />
         </div>
 
