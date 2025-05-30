@@ -12,13 +12,21 @@ const Recipe = ({recipe, handleItem, image, showRating= false}) => {
     const openModal = () => setModal(true);
     const closeModal = () => setModal(false);
     
-    const ingredients = [];
-    const steps = recipe.analyzedInstructions[0].steps[0].step;
+   const ingredients = [];
+  const instructions = [];
 
-
-    for (let i = 0; i < recipe.extendedIngredients.length; i++) {
-        ingredients.push(<p key={i}>{recipe.extendedIngredients[i].original}</p>);
+  try {
+    let steps = recipe.analyzedInstructions[0].steps;
+    for (let i = 0; i < steps.length; i++) {
+      instructions.push(<p key={i}>{steps[i].step}</p>);
     }
+  } catch {
+    instructions[0] = "No instructions";
+  }
+
+  for (let i = 0; i < recipe.extendedIngredients.length; i++) {
+    ingredients.push(<p key={i}>{recipe.extendedIngredients[i].original}</p>);
+  }
 
     useEffect(() => {
         const storedRating = localStorage.getItem("recipeRatings");
@@ -87,7 +95,7 @@ const Recipe = ({recipe, handleItem, image, showRating= false}) => {
 
             {modal && (
                 <ModalRecipe
-                    steps={steps}
+                    steps={instructions}
                     ingredients={ingredients}
                     closeModal={closeModal}
                     title={recipe.title}
