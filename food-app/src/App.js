@@ -51,12 +51,12 @@ function App() {
   function sortByTime() {
     setRecipes([...recipes].sort((a, b) => a.readyInMinutes - b.readyInMinutes
     ));
-    setSearchResult([...searchResult].sort((a, b) => a.readyInMinutes - b.readyInMinutes   //Stigande
+    setSearchResult([...searchResult].sort((a, b) => a.readyInMinutes - b.readyInMinutes   //Stigande 
     ));
   }
 
   function sortByRating() {
-    setRecipes([...recipes].sort((a, b) => b.rating - a.rating  //Fallande
+    setRecipes([...recipes].sort((a, b) => b.rating - a.rating  //Fallande 
     ));
   }
 
