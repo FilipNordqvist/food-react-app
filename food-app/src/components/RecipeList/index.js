@@ -1,6 +1,6 @@
 import Recipe from "../Recipe";
 import styles from "./recipelist.module.css";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const RecipeList = ({
   titleOfList,
