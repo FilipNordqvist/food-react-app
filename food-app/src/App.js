@@ -1,10 +1,11 @@
 import './App.css';
 import { useEffect, useState } from "react";
-import InputField from './components/InputField';
+import InputField from './components/InputField/index.js';
 import {searchRecipeById, searchRecipes} from "./http.js";
-import Button from './components/Button';
-import RecipeList from './components/RecipeList';
+import Button from './components/Button/index.js';
+import RecipeList from './components/RecipeList/index.js';
 import CheckboxList from './components/CheckboxList/index.js';
+
 
 function App() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -47,6 +48,19 @@ function App() {
     );
   };
 
+  function sortByTime() {
+    setRecipes([...recipes].sort((a, b) => a.readyInMinutes - b.readyInMinutes
+    ));
+    setSearchResult([...searchResult].sort((a, b) => a.readyInMinutes - b.readyInMinutes   //Stigande
+    ));
+  }
+
+  function sortByRating() {
+    setRecipes([...recipes].sort((a, b) => b.rating - a.rating  //Fallande
+    ));
+  }
+
+
   useEffect(() => {
     localStorage.setItem("recipes", JSON.stringify(recipes));
   }, [recipes]);
@@ -54,17 +68,22 @@ function App() {
   
 
   return (
-    <div className="App">
-      <h1 className="mt-5">Recipe rescue</h1>
-      <hr className="d-flex m-5" />
+    <div className="App mt-4">
+      <h1 className="display-3 mt-5 m-5">Recipe rescue</h1>
+      
 
-      <div className="d-flex align-items-center p-3">
+      <div className="d-flex flex-column flex-sm-row align-items-stretch gap-2 p-3">  
         <div className="flex-grow-1 me-3">
           <InputField
             id = "recipes"
-            placeholder = "Recipe name here..."
+            placeholder = "Recipe name here..."            
             onChange = {(e) => setSearchTerm(e.target.value)}
             value = {searchTerm}
+            onKeyUp={e => {
+              if (e.key === 'Enter') {
+                handleRecipesSearch(searchTerm);
+              }
+            }}
           />
         </div>
 
@@ -82,6 +101,23 @@ function App() {
         />
       </div>
 
+      <div className="container mt-3">
+        <div className="row justify-content-center g-2">
+          <div className="col-auto">
+            <Button
+              text="Sort by time"
+              onClick={() => sortByTime()}
+            />
+          </div>
+          <div className="col-auto">
+            <Button
+              text="Sort by rating"
+              onClick={() => sortByRating()}
+            />
+          </div>
+        </div>
+      </div>
+
       <hr className="d-flex m-5" />
       
       <RecipeList
@@ -91,18 +127,16 @@ function App() {
         show={true}
         image="/images/star.png"
         showRating ={true}
-     
       />
       <hr className="d-flex m-5" />
       <RecipeList
-        titleOfList = "Favorites"
+        titleOfList = "Saved Recipes"
         recipes={recipes}
         handleItem={removeFavoriteRecipe}
         show={true}
         image="/images/delete.png"
+        showRating ={true}
       />
-
-    
     </div>
   );
 }
