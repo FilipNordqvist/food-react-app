@@ -7,6 +7,10 @@ You can filter on dietery preferences, rate the recipes and save your favorites.
 
 Clone the repository.
 
+Create a new file ".env" in folder food-app.
+Add your API key in the file as:
+REACT_APP_API_KEY = yourapikeyhere
+
 Navigate (cd) into ./food-react-app/food-app
 
 To install dependencies, run:
