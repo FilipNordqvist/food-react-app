@@ -19,10 +19,9 @@ const Recipe = ({
 
   const ingredients = [];
   const instructions = [];
-  let steps = [];
 
   try {
-    steps = recipe.analyzedInstructions[0].steps;
+    let steps = recipe.analyzedInstructions[0].steps;
     for (let i = 0; i < steps.length; i++) {
       instructions.push(<p key={i}>{steps[i].step}</p>);
     }
@@ -85,7 +84,7 @@ const Recipe = ({
 
       {modal && (
         <ModalRecipe
-          steps={steps}
+          steps={instructions}
           ingredients={ingredients}
           closeModal={closeModal}
           title={recipe.title}
