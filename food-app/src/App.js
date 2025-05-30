@@ -1,10 +1,10 @@
 import './App.css';
 import { useEffect, useState } from "react";
-import InputField from './Components/InputField/index.js';
+import InputField from './components/InputField/index.js';
 import {searchRecipeById, searchRecipes} from "./http.js";
-import Button from './Components/Button/index.js';
-import RecipeList from './Components/RecipeList/index.js';
-import CheckboxList from './Components/CheckboxList/index.js';
+import Button from './components/Button/index.js';
+import RecipeList from './components/RecipeList/index.js';
+import CheckboxList from './components/CheckboxList/index.js';
 
 
 function App() {
