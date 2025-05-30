@@ -23,7 +23,7 @@ Search for recipes, rate them and save favorites.
 ## Built With
 
 * [React] - Web framework
-* [Bootstrap5] - Styling library
+* [Bootstrap5] - Styling library and responsivity
 * [NPM] - Package Manager
 * [Axios] - Used to make API-calls
 
