@@ -6,6 +6,8 @@ import Button from "./Components/Button/index.js";
 import RecipeList from "./Components/RecipeList/index.js";
 import CheckboxList from "./Components/CheckboxList/index.js";
 
+//Kommentar
+
 function App() {
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResult, setSearchResult] = useState([]);
