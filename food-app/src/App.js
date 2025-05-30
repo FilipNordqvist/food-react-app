@@ -1,10 +1,10 @@
 import './App.css';
 import { useEffect, useState } from "react";
-import InputField from './Components/InputField';
+import InputField from './components/InputField';
 import {searchRecipeById, searchRecipes} from "./http.js";
-import Button from './Components/Button';
-import RecipeList from './Components/RecipeList';
-import CheckboxList from './Components/CheckboxList/index.js';
+import Button from './components/Button';
+import RecipeList from './components/RecipeList';
+import CheckboxList from './components/CheckboxList/index.js';
 
 function App() {
   const [searchTerm, setSearchTerm] = useState("");
