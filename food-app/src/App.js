@@ -39,7 +39,11 @@ function App() {
   };
 
   const addFavoriteRecipe = (recipe) => {
-    setRecipes((prevRecipes) => [...prevRecipes, recipe]);
+    const exists = recipes.some((r) => r.id === recipe.id);
+    if(!exists){
+      setRecipes((prevRecipes) => [...prevRecipes, recipe]);
+      console.log("lade till");
+    }
   };
 
   const removeFavoriteRecipe = (recipeToRemove) => {
