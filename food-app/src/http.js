@@ -12,7 +12,6 @@ export const searchRecipes = async (searchTerm, selectedDiets) => {
     throw new Error(`HTTP-status: ${response.status}: ${response.statusText}`);
   }
   const data = await response.json();
-  console.log(data.results);
   return data.results;
 };
 

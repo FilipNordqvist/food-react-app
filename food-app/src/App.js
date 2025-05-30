@@ -33,10 +33,8 @@ function App() {
 
   const handleRecipesSearch = async (input) => {
     const dietParam = `&diet=${selectedDiets.join(",")}`;
-    console.log(dietParam);
 
     const result = await searchRecipes(input, dietParam);
-    console.log(result);
     setSearchResult(result);
   };
 
