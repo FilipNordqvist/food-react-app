@@ -1,11 +1,10 @@
 import './App.css';
 import { useEffect, useState } from "react";
-import InputField from './Components/InputField';
+import InputField from './components/InputField';
 import {searchRecipeById, searchRecipes} from "./http.js";
-import Button from './Components/Button';
-import RecipeList from './Components/RecipeList';
-import CheckboxList from './Components/CheckboxList/index.js';
-
+import Button from './components/Button';
+import RecipeList from './components/RecipeList';
+import CheckboxList from './components/CheckboxList/index.js';
 
 function App() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -56,8 +55,8 @@ function App() {
 
   return (
     <div className="App">
-      <h1 className="display-3 mt-5 m-5">Recipe rescue</h1>
-      
+      <h1 className="mt-5">Recipe rescue</h1>
+      <hr className="d-flex m-5" />
 
       <div className="d-flex align-items-center p-3">
         <div className="flex-grow-1 me-3">
@@ -101,7 +100,6 @@ function App() {
         handleItem={removeFavoriteRecipe}
         show={true}
         image="/images/delete.png"
-        showHearts={true}
       />
 
     
