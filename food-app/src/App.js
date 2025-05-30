@@ -126,7 +126,6 @@ function App() {
         handleItem={addFavoriteRecipe}
         show={true}
         image="/images/star.png"
-         showRating ={true}
       />
       <hr className="d-flex m-5" />
       <RecipeList
