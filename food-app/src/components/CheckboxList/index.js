@@ -11,8 +11,8 @@ export default function CheckboxList({ selected, onToggle }) {
   ];
 
   return (
-    <div className="mb-2">
-      <div className="row gx-0 gy-0 mt-0">
+    <div className="container mt-3 text-start">
+      <div className="row g-2">
         {diets.map(
           (
             item,
