@@ -1,13 +1,12 @@
 .img {
-    float: right;
-    height: 25px;
-    margin-left: 5px;
+  float: right;
+  height: 25px;
+  margin-left: 5px;
 }
 
-
-.favorite{
-    float: right;
-    height: 25px;
-    margin-left: 5px;
-    cursor: pointer;
+.favorite {
+  float: right;
+  height: 25px;
+  margin-left: 5px;
+  cursor: pointer;
 }
