@@ -19,6 +19,9 @@ Go to http://localhost/3000
 
 Search for recipes, rate them and save favorites.
 
+## Troubleshooting
+Om det uppstår ett fel där applikationen säger att "Components" eller "compontents" saknas så kontrollera om mappen är döpt till "Components"/"components" och byt till motsatsen.
+
 
 ## Built With
 
