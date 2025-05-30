@@ -38,9 +38,15 @@ function App() {
     setSearchResult(result);
   };
 
-  const addFavoriteRecipe = (recipe) => {
+ const addFavoriteRecipe = (recipe) => {
+  const exists = recipes.some((r) => r.id === recipe.id);
+  if (!exists) {
     setRecipes((prevRecipes) => [...prevRecipes, recipe]);
-  };
+    alert("Saved " + recipe.title)
+  }else{
+    alert("Already saved recipe")
+  }
+};
 
   const removeFavoriteRecipe = (recipeToRemove) => {
     setRecipes((prevRecipes) =>
